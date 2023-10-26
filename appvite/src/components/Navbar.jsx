@@ -1,36 +1,28 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
 
     return (
-        <nav className='navbar bg-body-tertiary ' >
-            <div className='container-fluid ' style={{ backgroundColor: 'lightblue' }}>
-                <a className='navbar-brand' href="#">
+        <Navbar bg="light" data-bs-theme="light">
+        <Container>
+            <a className='navbar-brand' href="#">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" alt="Logo" width="50" height="30" className="d-inline-block align-text-top"/>
-                NexGenTech
-                </a>
+                
+            </a>
+          <Navbar.Brand href="#home">NexGenTech</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Productos</Nav.Link>
+            <Nav.Link href="#pricing">Contactanos</Nav.Link>
+          </Nav>
+        </Container>
 
-                <ul className="nav justify-content-center">
-
-                    <li className="nav-item mx-auto">
-                        <a className="nav-link active display-1" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link display-6" href="#">Productos</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link display-6" href="#">Contactanos</a>
-                    </li>
-                    
-                </ul>
-
-                <CartWidget/>
-            </div>
-
-           
-
-            
-        </nav>
+        <CartWidget/>
+        
+      </Navbar>
 
         
 
