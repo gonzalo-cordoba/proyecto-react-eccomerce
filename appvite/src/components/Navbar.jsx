@@ -18,9 +18,12 @@ export const NavBar = () => {
             <Nav.Link href="#features">Productos</Nav.Link>
             <Nav.Link href="#pricing">Contactanos</Nav.Link>
           </Nav>
+
+          <CartWidget/>
+          
         </Container>
 
-        <CartWidget/>
+        
         
       </Navbar>
 
