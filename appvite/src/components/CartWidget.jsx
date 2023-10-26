@@ -1,4 +1,3 @@
-import carrito from '../assets/react.svg'
 
 export const CartWidget = () => {
 
