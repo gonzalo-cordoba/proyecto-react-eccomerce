@@ -1,3 +1,18 @@
-a > span{
-    color: blueviolet;
+/*Titulo "NextGenTech" de nav bar*/
+a.navbar-brand{
+    color: white;
 }
+
+
+/* Etiquetas link de nav bar */
+.navbar-nav .nav-link {
+    color: white; 
+  }
+
+  /* Etiqueta Span de Nav Bar*/
+a > span{
+    color: white;
+}
+
+
+

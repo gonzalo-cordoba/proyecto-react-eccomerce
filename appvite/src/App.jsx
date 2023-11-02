@@ -6,10 +6,11 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting={"Hello"} />
+      <ItemListContainer greeting={"¡Bienvenidos a tienda NexGenTech!"} />
       
     </>
   )
 }
+
 
 export default App;

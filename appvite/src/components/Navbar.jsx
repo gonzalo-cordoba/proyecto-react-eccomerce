@@ -1,12 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import "../App.css"
 import { CartWidget } from "./CartWidget";
+
+
 
 export const NavBar = () => {
 
     return (
-        <Navbar bg="light" data-bs-theme="light">
+        <Navbar bg="primary" data-bs-theme="light">
         <Container>
             <a className='navbar-brand' href="#">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" alt="Logo" width="50" height="30" className="d-inline-block align-text-top"/>
