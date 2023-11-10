@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Container from "react-bootstrap/esm/Container";
+import "../App.css";
+
 import { products } from "../data/products";
 import { ItemDetail } from "./ItemDetail";
 

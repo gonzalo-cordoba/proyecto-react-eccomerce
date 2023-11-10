@@ -18,9 +18,9 @@ export const NavBar = () => {
             </a>
           <Navbar.Brand to="#home">NexGenTech</Navbar.Brand>
           <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="category/procesadores">Procesadores</NavLink>
-            <NavLink to="category/teclados">Teclados</NavLink>
+            <NavLink to="/" className="mi-navlink container">Home</NavLink>
+            <NavLink to="category/procesadores" className="mi-navlink container">Procesadores</NavLink>
+            <NavLink to="category/teclados" className="mi-navlink container">Teclados</NavLink>
           </Nav>
 
           <CartWidget/>
