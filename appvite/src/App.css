@@ -1,0 +1,26 @@
+/*Titulo "NextGenTech" de nav bar*/
+
+span.navbar-brand{
+  color: white;
+}
+
+
+/* Etiquetas link de nav bar */
+.mi-navlink {
+    color: white;
+    text-decoration: none;
+    
+    /* Otros estilos */
+  }
+
+  /* Etiqueta Span de Nav Bar*/
+a > span{
+    color: white;
+}
+
+/* Boton de tarjetas de productos */
+button.btn.btn-primary{
+  background-color: blueviolet;
+}
+
+
