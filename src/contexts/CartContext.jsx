@@ -10,6 +10,5 @@ export const CartProvider = ({children}) => {
 
     const onAdd = ( item ) => setItems(prev => {return [...prev, item]} )
 
-
     return <cartContext.Provider value={{ items, clear, onAdd}}>{children}</cartContext.Provider>
 }
