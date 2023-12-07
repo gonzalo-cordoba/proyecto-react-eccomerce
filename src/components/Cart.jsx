@@ -18,6 +18,8 @@ export const Cart = () => {
 
   const navigate = useNavigate();
 
+  const total = items.reduce((acumulador, valorActual) => acumulador + (valorActual.quantity * valorActual.price), 0)
+
   const handleChange = (event) => {
     setBuyer({
       ...buyer,
@@ -25,7 +27,14 @@ export const Cart = () => {
     });
   };
 
-  const sendOrder = () => {
+  const sendOrder = (ev) => {
+    ev.preventDefault();
+
+    if (!buyer.name || !buyer.email || !buyer.phone) {
+      alert("Por favor, complete todos los campos del formulario.");
+      return;
+    }
+
     const order = {
       buyer,
       items,
@@ -39,7 +48,7 @@ export const Cart = () => {
       .then(({ id }) => {
         if (id) {
           alert("Su orden: " + id + " ha sido completada!");
-          setBuyer(initialValues); 
+          setBuyer(initialValues);
           clear();
         }
       })
@@ -70,6 +79,7 @@ export const Cart = () => {
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Imagen</th>
+            <th>Precio</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -77,17 +87,19 @@ export const Cart = () => {
           {items?.map((item) => (
             <tr key={item.id}>
               <td>{item.title}</td>
-              <td>{item.price}</td>
+              <td>{item.quantity}</td>
+              
               <td>
                 <img src={item.pictureUrl} alt={item.title} />
               </td>
+              <td>{item.price}</td>
               <td onClick={() => onRemove(item.id)}>X</td>
             </tr>
           ))}
         </tbody>
         <tfoot>
             <tr>
-                <td>Total: 1500</td>
+                <td>Total: {total}</td>
             </tr>
         </tfoot>
       </Table>
@@ -101,6 +113,7 @@ export const Cart = () => {
             value={buyer.email}
             onChange={handleChange}
             name="email"
+            required
           />
         </Form.Group>
 
@@ -111,6 +124,7 @@ export const Cart = () => {
             value={buyer.name}
             onChange={handleChange}
             name="name" 
+            required
           />
         </Form.Group>
 
@@ -121,10 +135,11 @@ export const Cart = () => {
             value={buyer.phone}
             onChange={handleChange}
             name="phone"
+            required
           />
         </Form.Group>
 
-        <Button variant="primary" onClick={sendOrder}>
+        <Button variant="primary" type="submit" onClick={sendOrder}>
           Enviar
         </Button>
       </Form>
