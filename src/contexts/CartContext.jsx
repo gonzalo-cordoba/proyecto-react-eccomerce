@@ -30,7 +30,7 @@ export const CartProvider = ({children}) => {
         }
     };
 
-    console.log(items)
+    
 
     const onRemove = ( id ) => {
         const filterItems = items.filter(item => item.id !== id);
